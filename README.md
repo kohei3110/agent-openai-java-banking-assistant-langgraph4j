@@ -99,7 +99,7 @@ flowchart TD
 
 The personal banking assistant is designed as a [vertical multi-agent system](./docs/multi-agents/introduction.md), with each agent specializing in a specific functional domain (e.g., account management, transaction history, payments). The architecture consists of the following key components:
 
-- **Copilot Assistant Copilot App (Microservice)**: Serves as the central hub for processing user requests. It's a spring boot application implementing a vertical multi-agent architectures using  [Langgraph4j] for agentic workflow definition & management plus [Langchain4j] to create Agents equipped with tools. 
+- **Copilot Assistant Copilot App (Microservice)**: Serves as the central hub for processing user requests. It's a spring boot application implementing a vertical multi-agent architectures using  [Langgraph4j](https://github.com/bsorrentino/langgraph4j) for agentic workflow definition & management plus [Langchain4j](https://github.com/langchain4j/langchain4j) to create Agents equipped with tools. 
 Basically the Supervisor Agent understand user intent from chat interactions and routes the request to the appropriate domain-specific agent.
     - **Supervisor Agent**: Acts as a user proxy, interpreting user intent based on chat inputs and directing the request to the specific domain agent. This component ensures that user queries are efficiently handled by the relevant agent. Agents are engaged byt the supervisor in a single turn conversation meaning that only one is selected by the supervisor to answer to user task. It’s just doing routing logic, assuming the domain agent will either carry-on the task in one shot or will involve user feedback if data oversight or action approval (like payment submit) is required.
     
