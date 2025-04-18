@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.microsoft.openai.samples.assistant</groupId>
+		<artifactId>copilot-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>langgraph4j-agents</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>langgraph agents based implementation</name>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.microsoft.openai.samples.assistant</groupId>
+			<artifactId>langchain4j-agents</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bsc.langgraph4j</groupId>
+			<artifactId>langgraph4j-core</artifactId>
+			<version>${langgraph4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bsc.langgraph4j</groupId>
+			<artifactId>langgraph4j-langchain4j</artifactId>
+			<version>${langgraph4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j</artifactId>
+			<version>${langchain4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-azure-open-ai</artifactId>
+			<version>${langchain4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-ollama</artifactId>
+			<version>${langchain4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bsc.langgraph4j</groupId>
+			<artifactId>langgraph4j-studio-springboot</artifactId>
+			<version>${langgraph4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.11.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.azure</groupId>
+			<artifactId>azure-identity</artifactId>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/*ITest.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
