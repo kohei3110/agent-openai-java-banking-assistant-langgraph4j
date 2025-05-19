@@ -10,6 +10,7 @@ COPY copilot-backend copilot-backend
 COPY copilot-common copilot-common
 COPY langchain4j-agents langchain4j-agents
 COPY langchain4j-openapi langchain4j-openapi
+COPY langgraph4j-agents langgraph4j-agents
 
 RUN chmod +x ./mvnw
 # Convert CRLF to LF
